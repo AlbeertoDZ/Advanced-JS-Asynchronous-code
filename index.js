@@ -58,7 +58,16 @@ const printGithubUserProfile = (username) => {
 </section>
 ```
 */
-
+const getAndPrintGitHubUserProfile = () => {
+    return fetch(`https://api.github.com/users/alenriquez96`)
+    .then((res) => res.json())
+    .then((data) => 
+    `<section>
+    <img src="${data. }" alt="Alberto Enriquez">
+    <h1>${data.name}</h1>
+    <p>Public repos: ${data.public_repo}</p>
+</section>`)
+}
 
 
 //8.- Manipulación del DOM: Crea un input de tipo texto, y un botón buscar. El usuario escribirá en el input el nombre de usuario de GitHub que quiera buscar. Después llamaremos a la función **getAndPrintGitHubUserProfile(username)** que se ejecute cuando se pulse el botón buscar.(Esto no se testea).
